@@ -1,0 +1,51 @@
+.filter-bar {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 5px;
+    display: inline-block;
+    margin: 10px;
+}
+
+.funnel{
+    width:30px;
+    height:30px;
+    cursor: pointer;
+}
+
+.filter {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+}
+
+.posts{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.post a{
+    background-color: white;
+    text-decoration: none;
+}
+
+.post a:hover{
+    background-color: darkgrey;
+    color: rebeccapurple;
+}
+
+.post{
+    padding: 5px;
+}
+
+.post h4{
+    font-size: 20px;
+    color: grey;
+}
+
+.header{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}

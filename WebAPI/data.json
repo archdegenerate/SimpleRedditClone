@@ -1,0 +1,105 @@
+{
+  "Users": [
+    {
+      "Id": 1,
+      "UserName": "Troels",
+      "Password": ""
+    },
+    {
+      "Id": 2,
+      "UserName": "Jakob",
+      "Password": ""
+    },
+    {
+      "Id": 3,
+      "UserName": "Tomas",
+      "Password": ""
+    },
+    {
+      "Id": 4,
+      "UserName": "kokotko",
+      "Password": ""
+    },
+    {
+      "Id": 5,
+      "UserName": "test",
+      "Password": "test"
+    },
+    {
+      "Id": 6,
+      "UserName": "mika",
+      "Password": "daisy123"
+    },
+    {
+      "Id": 7,
+      "UserName": "skuska",
+      "Password": "skuska"
+    },
+    {
+      "Id": 8,
+      "UserName": "daisy",
+      "Password": "mika123"
+    },
+    {
+      "Id": 9,
+      "UserName": "skuskacifunguje",
+      "Password": "ano"
+    },
+    {
+      "Id": 10,
+      "UserName": "mkukucinko",
+      "Password": "jebemblazor123"
+    },
+    {
+      "Id": 11,
+      "UserName": "registertest",
+      "Password": "123"
+    }
+  ],
+  "Posts": [
+    {
+      "Id": 1,
+      "Author": {
+        "Id": 1,
+        "UserName": "Troels",
+        "Password": ""
+      },
+      "Title": "skuska",
+      "Content": "pomoc",
+      "IsPrivate": false
+    },
+    {
+      "Id": 2,
+      "Author": {
+        "Id": 1,
+        "UserName": "Troels",
+        "Password": ""
+      },
+      "Title": "sad hjd",
+      "Content": "kvdsva",
+      "IsPrivate": false
+    },
+    {
+      "Id": 3,
+      "Author": {
+        "Id": 10,
+        "UserName": "mkukucinko",
+        "Password": "jebemblazor123"
+      },
+      "Title": "Uz stracam chut do zivota",
+      "Content": "asddddddddddddddddddddddddddddddddddddddadjbasbdasbdhsajkdnkjsabdbsakndnasdvasdashldk",
+      "IsPrivate": false
+    },
+    {
+      "Id": 4,
+      "Author": {
+        "Id": 5,
+        "UserName": "test",
+        "Password": "test"
+      },
+      "Title": "inshallah",
+      "Content": "it works",
+      "IsPrivate": false
+    }
+  ]
+}

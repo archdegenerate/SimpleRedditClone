@@ -1,0 +1,54 @@
+﻿@page "/RegisterUser"
+@using Domain.DTOs
+@using HttpClients.ClientInterfaces
+@using BlazorApp.Services
+@using Domain.Models
+@inject IUserService userService;
+@inject IAuthService authService;
+<h3>RegisterUser</h3>
+
+<div class="card">
+    <h3>Register</h3>
+    <div class="form-group field">
+        <label>User name:</label>
+        <input type="text" @bind="username" @bind:event="oninput"/>
+        <label>Password</label>
+         <input type="text" @bind="password" @bind:event="oninput"/>
+        @if (!string.IsNullOrEmpty(resultMsg))
+        {
+            <label style="color: @color">@resultMsg</label>
+        }
+    </div>
+    <div class="button-row">
+        <button @onclick="Create" disabled="@(string.IsNullOrEmpty(username))" class="acceptbtn">Register</button>
+    </div>
+</div>
+
+
+@code {
+    private string username = "";
+    private string password = "";
+    private string resultMsg = "";
+    private string color = "";
+    
+    private async Task Create()
+    {
+        resultMsg = "";
+
+        try
+        {
+            await userService.CreateAsync(new UserCreationDto(username, password));
+            await authService.LoginAsync(username, password);
+            username = "";
+            password = "";
+            resultMsg = "User successfully created";
+            color = "green";
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            resultMsg = e.Message;
+            color = "red";
+        }
+    }
+}

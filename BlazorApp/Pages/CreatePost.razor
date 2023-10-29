@@ -1,0 +1,103 @@
+﻿@page "/CreatePost"
+@using global::Domain
+@using global::Domain.DTOs
+@using HttpClients.ClientInterfaces
+@using Domain.Models
+@using BlazorApp.Services
+@using System.Security.Claims
+@inject IUserService userService;
+@inject IPostService postService;
+@inject IAuthService authService;
+@inject NavigationManager navMgr;
+@attribute [Authorize]
+<h3>CreatePost</h3>
+
+@code {
+    private IEnumerable<User>? users;
+    private ClaimsPrincipal principal;
+    private User user;
+    //private int? selectedUserId;
+    private string postTitle = "";
+    private string postContent = "";
+
+    private string msg = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        msg = "";
+        try
+        {
+            users = await userService.GetUsers();
+            principal = await authService.GetAuthAsync();
+            string? username = principal.FindFirst(ClaimTypes.Name)?.Value;
+            //Console.WriteLine(username);
+            user = await userService.GetUserByUsername(username);
+            //Console.WriteLine($"Username: {user.UserName}, Password: {user.Password}");
+
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            msg = e.Message;
+        }
+    }
+    private async Task Create()
+    {
+        msg = "";
+        if (string.IsNullOrEmpty(postTitle))
+        {
+            msg = "Title cannot be empty!";
+            return;
+        }
+        if (string.IsNullOrEmpty(postContent))
+        {
+            msg = "Cannot create an empty post!";
+            return;
+        }
+
+        try
+        {
+        
+            PostCreationDto dto = new(user.Id, postTitle, postContent);
+            await postService.CreateAsync(dto);
+            navMgr.NavigateTo("/");
+        
+            
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            msg = e.Message;
+        }
+    }
+}
+
+<div class="card">
+    @if (users == null)
+    {
+        <label>Loading users...</label>
+    }
+    else if (!users.Any())
+    {
+        <label>No users, you cannot create a Post without assignee.</label>
+    }
+    else
+    {
+        <h3>Create Post</h3>
+        <div class="form-group field">
+            <label>Title:</label>
+            <input type="text" @bind="postTitle"/>
+        </div>
+        <div class="form-group field">
+            <label>Content:</label>
+            <input type="text" @bind="postContent"/>
+        </div>
+        <div class="button-row">
+            @if (!string.IsNullOrEmpty(msg))
+            {
+                <label style="color: red">@msg</label>
+            }
+            <button @onclick="Create" class="acceptbtn">Create</button>
+        </div>
+    }
+</div>

@@ -1,0 +1,77 @@
+﻿@page "/ViewPosts"
+@using global::Domain
+@using HttpClients.ClientInterfaces
+@using Domain.Models
+@inject IPostService postService;
+
+
+<div class="header"><h3>Posts</h3></div>
+
+
+@if (posts == null)
+{
+}
+else if (!posts.Any())
+{
+    <p>No Posts to display</p>
+}
+else
+{
+    @* <table class="table"> *@
+    @*     <thead> *@
+    @*     <tr> *@
+    @*         <th>Post ID</th> *@
+    @*         <th>Owner ID</th> *@
+    @*         <th>Title</th> *@
+    @*         <th>Completed?</th> *@
+    @*     </tr> *@
+    @*     </thead> *@
+    @*     <tbody> *@
+    @*     @foreach (var item in posts) *@
+    @*     { *@
+    @*         <tr> *@
+    @*             <td>@item.Id</td> *@
+    @*             <td>@item.Author.UserName</td> *@
+    @*             <td>@item.Title</td> *@
+    @*             <td>@item.Content</td> *@
+    @*         </tr> *@
+    @*     } *@
+    @*     </tbody> *@
+    @* </table> *@
+    
+    <div class="posts">
+        @foreach (var item in posts)
+        {
+            <div class="post">
+                <h3><b><a href="/PostDetails/@item.Id">@item.Title</a></b></h3>
+                <h4>submitted by u/@item.Author.UserName</h4>
+                @*<p>@item.Content</p>*@
+            </div>
+        }
+    </div>
+
+    
+}
+@if (!string.IsNullOrEmpty(msg))
+{
+    <label style="color: red">@msg</label>
+}
+
+@code {
+    private IEnumerable<Post>? posts;
+    private string msg = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            posts = await postService.GetAsync(null, null, null);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            msg = e.Message;
+        }
+    }
+
+}
