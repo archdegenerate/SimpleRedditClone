@@ -1,0 +1,12 @@
+﻿.post h3{
+    font-size: 40px;
+    color: royalblue;
+}
+.post h4{
+    font-size: 25px;
+    color: grey;
+}
+.post p{
+    line-height: 20px;
+    padding-top: 5%;
+}

@@ -3,17 +3,17 @@
     {
       "Id": 1,
       "UserName": "Troels",
-      "Password": ""
+      "Password": "123"
     },
     {
       "Id": 2,
       "UserName": "Jakob",
-      "Password": ""
+      "Password": "456"
     },
     {
       "Id": 3,
       "UserName": "Tomas",
-      "Password": ""
+      "Password": "789"
     },
     {
       "Id": 4,
@@ -36,6 +36,39 @@
       },
       "Title": "Test title",
       "Content": "Cupcake ipsum dolor sit amet sweet roll donut. Gingerbread topping chupa chups macaroon halvah cotton candy lollipop ice cream sweet roll. Tiramisu I love I love chocolate croissant lollipop dessert.  Biscuit I love danish shortbread marshmallow muffin carrot cake oat cake sweet. Macaroon pudding jelly ice cream pudding fruitcake fruitcake. Danish marshmallow lollipop macaroon cake danish I love jelly I love.  Croissant cheesecake halvah drag\u00E9e ice cream. Marzipan carrot cake oat cake oat cake croissant I love drag\u00E9e cupcake powder. Icing pie chocolate cake chocolate cake gummi bears.  Carrot cake tart I love brownie cupcake jujubes. Chocolate cake jujubes gummies bear claw fruitcake pie biscuit I love. Pastry tart sweet cotton candy donut.  Dessert chupa chups chocolate cake chocolate bar carrot cake gingerbread jujubes. Sesame snaps I love sugar plum I love candy canes jelly beans oat cake. Dessert chocolate bar lollipop bonbon sesame snaps jelly marshmallow pudding.",
+      "IsPrivate": false
+    },
+    {
+      "Id": 2,
+      "Author": {
+        "Id": 3,
+        "UserName": "Tomas",
+        "Password": "789"
+      },
+      "Title": "Why bogosort is technically the fastest algorithm known to man",
+      "Content": "The chances of it being right on the first iteration are low, but never zero.",
+      "IsPrivate": false
+    },
+    {
+      "Id": 3,
+      "Author": {
+        "Id": 1,
+        "UserName": "Troels",
+        "Password": "123"
+      },
+      "Title": "Paris bedbug crisis\u0027 origin revealed",
+      "Content": "This is a message from the instigator of the bedbug epidemic in Paris: (the following text is a translation from a French forum) \u0022But what is my goal you ask? Why do that, oh big mad bug? Well, that\u0027s where the stroke of genius arrives. My interest is twofold. The first is that I hate, I hate France from the bottom of my guts and I hate the people who live here for the most part, I want this country to collapse as quickly as possible. I calculated that I have already cost more than 1 BILLION EUROS ALONE. And that\u0027s only taking into account the costs of treating bedbugs (which in practice is impossible, I\u0027ll tell you right away, it will always come back, don\u0027t worry, it\u0027s dead). And without counting the costs linked to psychological problems, loss of motivation, efficiency, lack of sleep, possible work accidents which may have occurred thanks to this etc etc. The second is that obviously knowing that bedbug infestations will increase I can not only ruin France, the state as well as individuals but also make as much money as possible by knowing which boxes to invest in and in which sector of activity exactly. The bedbug market is a growing market, very buoyant, I estimate it at more than 1000 billion units this year and double that next year with the return of tourism.\u0022 (this was shamelessly stolen from twitter.com, opinions are not my own)",
+      "IsPrivate": false
+    },
+    {
+      "Id": 4,
+      "Author": {
+        "Id": 2,
+        "UserName": "Jakob",
+        "Password": "456"
+      },
+      "Title": "Can snakes go backwards?",
+      "Content": "I wholeheartedly believed that they cannot, but I just googled it and damn apparently they are able to. My whole life is a lie.",
       "IsPrivate": false
     }
   ]

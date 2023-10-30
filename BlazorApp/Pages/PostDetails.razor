@@ -2,13 +2,13 @@
 @using Domain.Models;
 @using HttpClients.ClientInterfaces
 @inject IPostService postService;
-<h3>Post Details</h3>
+
 
 @if (post != null)
 {
     <div class="post">
     <h3>@post.Title</h3>
-    <h4>submitted by u/@post.Author.UserName</h4>
+        <h4><i>submitted by u/@post.Author.UserName</i></h4>
     <p>@post.Content</p>
     </div>
 }
@@ -28,8 +28,6 @@ else
     {
         try
         {
-    //NEED TO REPLACE THIS!!
-            User author = new User();
 
             post = await postService.GetByIdAsync(postId);
 
