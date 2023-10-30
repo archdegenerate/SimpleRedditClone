@@ -17,88 +17,25 @@
     },
     {
       "Id": 4,
-      "UserName": "kokotko",
-      "Password": ""
+      "UserName": "registertest",
+      "Password": "123"
     },
     {
       "Id": 5,
       "UserName": "test",
       "Password": "test"
-    },
-    {
-      "Id": 6,
-      "UserName": "mika",
-      "Password": "daisy123"
-    },
-    {
-      "Id": 7,
-      "UserName": "skuska",
-      "Password": "skuska"
-    },
-    {
-      "Id": 8,
-      "UserName": "daisy",
-      "Password": "mika123"
-    },
-    {
-      "Id": 9,
-      "UserName": "skuskacifunguje",
-      "Password": "ano"
-    },
-    {
-      "Id": 10,
-      "UserName": "mkukucinko",
-      "Password": "jebemblazor123"
-    },
-    {
-      "Id": 11,
-      "UserName": "registertest",
-      "Password": "123"
     }
   ],
   "Posts": [
     {
       "Id": 1,
       "Author": {
-        "Id": 1,
-        "UserName": "Troels",
-        "Password": ""
-      },
-      "Title": "skuska",
-      "Content": "pomoc",
-      "IsPrivate": false
-    },
-    {
-      "Id": 2,
-      "Author": {
-        "Id": 1,
-        "UserName": "Troels",
-        "Password": ""
-      },
-      "Title": "sad hjd",
-      "Content": "kvdsva",
-      "IsPrivate": false
-    },
-    {
-      "Id": 3,
-      "Author": {
-        "Id": 10,
-        "UserName": "mkukucinko",
-        "Password": "jebemblazor123"
-      },
-      "Title": "Uz stracam chut do zivota",
-      "Content": "asddddddddddddddddddddddddddddddddddddddadjbasbdasbdhsajkdnkjsabdbsakndnasdvasdashldk",
-      "IsPrivate": false
-    },
-    {
-      "Id": 4,
-      "Author": {
         "Id": 5,
         "UserName": "test",
         "Password": "test"
       },
-      "Title": "inshallah",
-      "Content": "it works",
+      "Title": "Test title",
+      "Content": "Cupcake ipsum dolor sit amet sweet roll donut. Gingerbread topping chupa chups macaroon halvah cotton candy lollipop ice cream sweet roll. Tiramisu I love I love chocolate croissant lollipop dessert.  Biscuit I love danish shortbread marshmallow muffin carrot cake oat cake sweet. Macaroon pudding jelly ice cream pudding fruitcake fruitcake. Danish marshmallow lollipop macaroon cake danish I love jelly I love.  Croissant cheesecake halvah drag\u00E9e ice cream. Marzipan carrot cake oat cake oat cake croissant I love drag\u00E9e cupcake powder. Icing pie chocolate cake chocolate cake gummi bears.  Carrot cake tart I love brownie cupcake jujubes. Chocolate cake jujubes gummies bear claw fruitcake pie biscuit I love. Pastry tart sweet cotton candy donut.  Dessert chupa chups chocolate cake chocolate bar carrot cake gingerbread jujubes. Sesame snaps I love sugar plum I love candy canes jelly beans oat cake. Dessert chocolate bar lollipop bonbon sesame snaps jelly marshmallow pudding.",
       "IsPrivate": false
     }
   ]
