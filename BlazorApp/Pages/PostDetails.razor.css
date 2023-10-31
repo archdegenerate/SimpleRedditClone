@@ -1,6 +1,6 @@
 ﻿.post h3{
     font-size: 40px;
-    color: royalblue;
+    color: beige;
 }
 .post h4{
     font-size: 25px;
@@ -9,4 +9,9 @@
 .post p{
     line-height: 20px;
     padding-top: 5%;
+    color: white;
+}
+
+.post{
+    background-color: black;
 }
