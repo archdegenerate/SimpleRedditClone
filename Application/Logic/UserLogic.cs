@@ -35,12 +35,17 @@ public class UserLogic : IUserLogic
     private static void ValidateData(UserCreationDto userToCreate)
     {
         string alias = userToCreate.UserName;
+        string password = userToCreate.Password;
 
         if (alias.Length < 3)
             throw new Exception("Username must be at least 3 characters long.");
 
         if (alias.Length > 15)
             throw new Exception("Username must be 15 or less characters long.");
+        if (password.Equals(""))
+        {
+            throw new Exception("Password cannot be empty!");
+        }
     }
 
     public Task<IEnumerable<User>> GetAsync(SearchUserParametersDto parameters)
