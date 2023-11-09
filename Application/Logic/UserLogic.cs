@@ -57,4 +57,9 @@ public class UserLogic : IUserLogic
     {
         return userDao.GetByUsernameAsync(username);
     }
+
+    public Task<User?> GetByIdAsync(int userId)
+    {
+        return userDao.GetByIdAsync(userId);
+    }
 }

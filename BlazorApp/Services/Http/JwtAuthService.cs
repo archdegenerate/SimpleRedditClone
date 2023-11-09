@@ -32,6 +32,8 @@ public class JwtAuthService : IAuthService
 
         if (!response.IsSuccessStatusCode)
         {
+            var statusCode = response.StatusCode;
+            Console.WriteLine(statusCode);
             throw new Exception(responseContent);
         }
 

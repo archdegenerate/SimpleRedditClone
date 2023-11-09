@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Domain.Models;
 
@@ -7,6 +8,7 @@ public class Post
     public int Id { get; set; }
     [JsonPropertyName("Author")]
     public User Author { get; set; }
+    public int AuthorId { get; set; }
     
     [JsonPropertyName("Title")]
     public string Title { get; set; }
@@ -17,12 +19,15 @@ public class Post
     [JsonPropertyName("IsPrivate")] 
     public bool IsPrivate { get; init; }
 
-    public Post(User author, string title, string content)
+    public Post(int authorId, string title, string content)
     {
-        Author = author;
+        AuthorId = authorId;
         Title = title;
         Content = content;
     }
+    
+    public Post(){}
+    
     
     
 }

@@ -2,7 +2,6 @@
 using Application.DaoInterfaces;
 using Application.LogicInterfaces;
 using Domain.DTOs;
-using FileData.DAOs;
 using Domain.Models;
 
 namespace WebAPI.Services;
@@ -18,9 +17,7 @@ public class AuthService : IAuthService
 
     public async Task<User> GetUser(string username, string password)
     {
-        SearchUserParametersDto parameters = new(username);
-        IEnumerable<User> users = await userLogic.GetAsync(parameters);
-        User? user = users.FirstOrDefault(u => u.UserName.Equals(username, StringComparison.OrdinalIgnoreCase));
+        User? user = await userLogic.GetByUsernameAsync(username);
         if (user != null)
         {
             return user;
@@ -34,10 +31,7 @@ public class AuthService : IAuthService
     
     public async Task<User> ValidateUser(User user)
     {
-        SearchUserParametersDto parameters = new(user.UserName);
-        IEnumerable<User> users = await userLogic.GetAsync(parameters);
-        User? existingUser = users.FirstOrDefault(u => 
-            u.UserName.Equals(user.UserName, StringComparison.OrdinalIgnoreCase));
+        User? existingUser = await userLogic.GetByUsernameAsync(user.UserName);
         Console.WriteLine($"Username: {existingUser.UserName}, Password: {existingUser.Password}");
         
         if (existingUser == null)

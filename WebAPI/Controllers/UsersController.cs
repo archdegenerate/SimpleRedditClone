@@ -69,4 +69,19 @@ public class UsersController : ControllerBase
             return StatusCode(500, e.Message);
         }
     }
+
+    [HttpGet("{userId}")]
+    public async Task<ActionResult<User>> GetByIdAsync(int userId)
+    {
+        try
+        {
+            User user = await userLogic.GetByIdAsync(userId);
+            return Ok(user);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
 }

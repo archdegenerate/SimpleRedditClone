@@ -24,6 +24,16 @@
       "Id": 5,
       "UserName": "test",
       "Password": "test"
+    },
+    {
+      "Id": 6,
+      "UserName": "newuser",
+      "Password": "password"
+    },
+    {
+      "Id": 7,
+      "UserName": "registertest1",
+      "Password": "password123"
     }
   ],
   "Posts": [
@@ -69,6 +79,28 @@
       },
       "Title": "Can snakes go backwards?",
       "Content": "I wholeheartedly believed that they cannot, but I just googled it and damn apparently they are able to. My whole life is a lie.",
+      "IsPrivate": false
+    },
+    {
+      "Id": 5,
+      "Author": {
+        "Id": 5,
+        "UserName": "test",
+        "Password": "test"
+      },
+      "Title": "Test article",
+      "Content": "dsjhbdsa",
+      "IsPrivate": false
+    },
+    {
+      "Id": 6,
+      "Author": {
+        "Id": 5,
+        "UserName": "test",
+        "Password": "test"
+      },
+      "Title": "newpost123",
+      "Content": "this is a test post",
       "IsPrivate": false
     }
   ]
