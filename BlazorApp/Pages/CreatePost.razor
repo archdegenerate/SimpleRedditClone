@@ -16,7 +16,6 @@
     private IEnumerable<User>? users;
     private ClaimsPrincipal principal;
     private User user;
-    //private int? selectedUserId;
     private string postTitle = "";
     private string postContent = "";
 
@@ -30,9 +29,7 @@
             users = await userService.GetUsers();
             principal = await authService.GetAuthAsync();
             string? username = principal.FindFirst(ClaimTypes.Name)?.Value;
-            //Console.WriteLine(username);
             user = await userService.GetUserByUsername(username);
-            //Console.WriteLine($"Username: {user.UserName}, Password: {user.Password}");
 
         }
         catch (Exception e)
@@ -83,16 +80,15 @@
     }
     else
     {
-        <h3>Create Post</h3>
-        <div class="form-group field">
-            <label>Title:</label>
-            <input type="text" @bind="postTitle"/>
+        <div class="title">
+            <label><b>Title:</b></label>
+            <input id="titleSpace" type="text" @bind="postTitle"/>
         </div>
-        <div class="form-group field">
-            <label>Content:</label>
-            <input type="text" @bind="postContent"/>
+        <div class="contentSpace">
+            <label id="contentLabel"><b>Content:</b></label>
+            <textarea id="content" type="text" @bind="postContent"></textarea>
         </div>
-        <div class="button-row">
+        <div class="createbtn">
             @if (!string.IsNullOrEmpty(msg))
             {
                 <label style="color: red">@msg</label>
